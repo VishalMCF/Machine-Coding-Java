@@ -43,6 +43,7 @@ public class Main {
                     } else {
                         expenseManager.showBalance();
                     }
+                    continue;
                 case "EXPENSE":
                     String userWhoPaid = commands[1];
                     int numberOfUsers = Integer.parseInt(commands[2]);
@@ -62,6 +63,7 @@ public class Main {
                                 .amount(amount)
                                 .build();
                             expenseManager.addExpense(expense);
+                            continue;
                         case "EXACT":
                             List<Double> amounts = new ArrayList<>();
                             for(int i=5+numberOfUsers; i<commands.length; i++){
@@ -75,6 +77,7 @@ public class Main {
                                 .exactAmount(amounts)
                                 .build();
                             expenseManager.addExpense(expense);
+                            continue;
                         case "PERCENT":
                             List<Double> percentages = new ArrayList<>();
                             for(int i=5+numberOfUsers; i<commands.length; i++){
@@ -88,6 +91,7 @@ public class Main {
                                 .percentage(percentages)
                                 .build();
                             expenseManager.addExpense(expense);
+                            continue;
                         default:
                             // throw exception
                             System.out.println("Command not supported ");

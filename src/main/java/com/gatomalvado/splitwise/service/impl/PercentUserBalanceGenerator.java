@@ -20,6 +20,9 @@ public class PercentUserBalanceGenerator implements UserBalanceGenerator {
         Double amount = expense.getAmount();
         int usersLength = expense.getPaidFor().size();
         for(int i=0; i<usersLength; i++){
+            if(expense.getPaidFor().get(i).equals(expense.getPaidBy())){
+                continue;
+            }
             userBalances.add(UserBalance.builder()
                 .owedTo(expense.getPaidBy())
                 .amount((amount*expense.getPercentage().get(i))/100.0)

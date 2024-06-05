@@ -12,6 +12,7 @@ import com.gatomalvado.splitwise.model.Expense;
 import com.gatomalvado.splitwise.model.ExpenseType;
 import com.gatomalvado.splitwise.model.User;
 import com.gatomalvado.splitwise.model.UserBalance;
+import com.gatomalvado.splitwise.service.StrategyConfig;
 import com.gatomalvado.splitwise.service.UserBalanceGenerator;
 
 public class ExpenseManager {
@@ -22,9 +23,12 @@ public class ExpenseManager {
 
     private Map<ExpenseType, UserBalanceGenerator> userBalanceGeneratorMap;
 
-    public ExpenseManager(){
+    private StrategyConfig strategyConfig;
+
+    public ExpenseManager() {
         this.userStore = new HashMap<>();
         this.userBalances = new ArrayList<>();
+        this.strategyConfig = StrategyConfig.getInstance();
         initMap();
     }
 
@@ -33,7 +37,7 @@ public class ExpenseManager {
         userBalances.addAll(userBalanceList);
     }
 
-    public void addUser(User user){
+    public void addUser(User user) {
         userStore.put(user.getUserId(), user);
     }
 
@@ -62,10 +66,9 @@ public class ExpenseManager {
         });
     }
 
-    private void initMap(){
+    private void initMap() {
         userBalanceGeneratorMap = new HashMap<>();
-        ServiceLoader<UserBalanceGenerator> serviceLoader = ServiceLoader.load(UserBalanceGenerator.class);
-        for(UserBalanceGenerator userBalanceGenerator : serviceLoader) {
+        for (UserBalanceGenerator userBalanceGenerator : strategyConfig.getStrategies()) {
             userBalanceGeneratorMap.put(userBalanceGenerator.getType(), userBalanceGenerator);
         }
     }
