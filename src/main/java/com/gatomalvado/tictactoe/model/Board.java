@@ -1,8 +1,4 @@
 package com.gatomalvado.tictactoe.model;
-
-
-
-
 public class Board {
 
     private Symbol[][] cells;
@@ -10,11 +6,7 @@ public class Board {
 
     public Board(int size) {
         this.size = size;
-        if(size==2){
-            cells = new Symbol[size+1][size+1];
-        }else if(size > 2){
-            cells = new Symbol[size+][]
-        }
+        cells = new Symbol[size][size];
     }
 
     public void printBoard() {
