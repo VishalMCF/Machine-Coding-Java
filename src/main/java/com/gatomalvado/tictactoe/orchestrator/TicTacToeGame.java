@@ -58,8 +58,10 @@ public class TicTacToeGame {
         if (!validateMove(move)) {
             return false;
         }
-        moves.add(move);
-        board.updateCell(move);
+        this.moves.add(move);
+        this.board.updateCell(move);
+        User currUser = this.turnQueue.remove();
+        this.turnQueue.add(currUser);
         return true;
     }
 
@@ -76,15 +78,15 @@ public class TicTacToeGame {
     private boolean validateMove(Move move) {
         User user = turnQueue.peek();
         if (move.getUser() != user) {
-            System.out.print("Invalid Move");
+            System.out.println("Invalid Move");
             return false;
         }
-        if (move.getXPos() >= board.getSize() || move.getYPos() >= board.getSize() || move.getYPos() < 0 || move.getXPos() < 0) {
-            System.out.print("Invalid Move");
+        if (move.getXPos() > board.getSize() || move.getYPos() > board.getSize() || move.getYPos() <= 0 || move.getXPos() <= 0) {
+            System.out.println("Invalid Move");
             return false;
         }
-        if (board.isCellAlreadyOccupied(move.getXPos(), move.getYPos())) {
-            System.out.print("Invalid Move");
+        if (board.isCellAlreadyOccupied(move.getXPos()-1, move.getYPos()-1)) {
+            System.out.println("Invalid Move");
             return false;
         }
         return true;
@@ -100,5 +102,9 @@ public class TicTacToeGame {
 
     public User getWinner(){
         return this.winner;
+    }
+
+    public int getTotalMoves(){
+        return board.getSize()*board.getSize();
     }
 }

@@ -13,11 +13,11 @@ public class TwoWinnerStrategy implements IWinnerDeciderStrategy {
         // validate vertical rows
         for (int j = 0; j < size; j++) {
             // scroll through one column
-            Symbol firstSymbol = board.getCell(0, j);
             boolean isAllCrossed = true;
             for (int i = 1; i < size; i++) {
-                Symbol currSymbol = board.getCell(i, j);
-                if (currSymbol == null || currSymbol.getSign().equals(firstSymbol.getSign())) {
+                String currSymbolSign = board.getCell(i, j).getSign();
+                String prevSymbolSign = board.getCell(0, j).getSign();
+                if ("_".equals(prevSymbolSign) || !currSymbolSign.equals(prevSymbolSign)) {
                     // ignore this column and move forward
                     isAllCrossed = false;
                     continue;
@@ -34,8 +34,9 @@ public class TwoWinnerStrategy implements IWinnerDeciderStrategy {
             Symbol firstSymbol = board.getCell(i, 0);
             boolean isAllCrossed = true;
             for (int j = 1; j < size; j++) {
-                Symbol currSymbol = board.getCell(i, j);
-                if (currSymbol == null || currSymbol.getSign().equals(firstSymbol.getSign())) {
+                String prevSymbolSign = board.getCell(i, j-1).getSign();
+                String currSymbolSign = board.getCell(i, j).getSign();
+                if (!currSymbolSign.equals(prevSymbolSign) || currSymbolSign.equals("_")) {
                     // ignore this column and move forward
                     isAllCrossed = false;
                     continue;
@@ -47,11 +48,11 @@ public class TwoWinnerStrategy implements IWinnerDeciderStrategy {
         }
 
         // validate top left to bottom right diagonal
-        Symbol firstSymbol = board.getCell(0, 0);
         boolean isAllCrossed = true;
-        for (int i = 0; i < size; i++) {
-            Symbol currSymbol = board.getCell(i, i);
-            if (currSymbol == null || currSymbol.getSign().equals(firstSymbol.getSign())) {
+        for (int i = 1; i < size; i++) {
+            String prevSymbolSign = board.getCell(i-1, i-1).getSign();
+            String currSymbolSign = board.getCell(i, i).getSign();
+            if (!prevSymbolSign.equals(currSymbolSign) || currSymbolSign.equals("_")) {
                 // ignore this column and move forward
                 isAllCrossed = false;
                 break;
@@ -63,11 +64,11 @@ public class TwoWinnerStrategy implements IWinnerDeciderStrategy {
         }
 
         // validate top right to bottom left diagonal
-        firstSymbol = board.getCell(0, size - 1);
         isAllCrossed = true;
         for (int i = 1; i < size; i++) {
-            Symbol currSymbol = board.getCell(i, size - 1 - i);
-            if (currSymbol == null || currSymbol.getSign().equals(firstSymbol.getSign())) {
+            String currSymbolSign = board.getCell(i, size - 1 - i).getSign();
+            String prevSymbolSign = board.getCell(i, size - 1 - (i-1)).getSign();
+            if (!currSymbolSign.equals(prevSymbolSign) || currSymbolSign.equals("_")) {
                 // ignore this column and move forward
                 isAllCrossed = false;
                 break;

@@ -10,5 +10,4 @@ import lombok.NoArgsConstructor;
 public class User {
     private String name;
     private Symbol symbol;
-
 }
