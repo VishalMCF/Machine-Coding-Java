@@ -1,16 +1,16 @@
-package com.gatomalvado.todo.trello.service;
+package com.gatomalvado.done.trello.service;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 
-import com.gatomalvado.todo.trello.entities.BaseEntity;
-import com.gatomalvado.todo.trello.entities.TrelloBoard;
-import com.gatomalvado.todo.trello.entities.Card;
-import com.gatomalvado.todo.trello.entities.SubGroup;
-import com.gatomalvado.todo.trello.entities.TaskUser;
-import com.gatomalvado.todo.trello.enums.Status;
+import com.gatomalvado.done.trello.entities.BaseEntity;
+import com.gatomalvado.done.trello.entities.TrelloBoard;
+import com.gatomalvado.done.trello.entities.Card;
+import com.gatomalvado.done.trello.entities.SubGroup;
+import com.gatomalvado.done.trello.entities.TaskUser;
+import com.gatomalvado.done.trello.enums.Status;
 
 public class BoardService {
 

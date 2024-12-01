@@ -1,4 +1,4 @@
-package com.gatomalvado.todo.trello.entities;
+package com.gatomalvado.done.trello.entities;
 
 public abstract class BaseEntity {
     public abstract String getEntityType();

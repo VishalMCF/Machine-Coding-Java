@@ -1,11 +1,11 @@
-package com.gatomalvado.todo.contactmgmt;
+package com.gatomalvado.done.contactmgmt;
 
 import java.util.UUID;
 
-import com.gatomalvado.todo.contactmgmt.entities.Contact;
-import com.gatomalvado.todo.contactmgmt.services.ContactRepository;
-import com.gatomalvado.todo.contactmgmt.services.MapBasedStrategy;
-import com.gatomalvado.todo.contactmgmt.services.SearchStrategy;
+import com.gatomalvado.done.contactmgmt.entities.Contact;
+import com.gatomalvado.done.contactmgmt.services.ContactRepository;
+import com.gatomalvado.done.contactmgmt.services.MapBasedStrategy;
+import com.gatomalvado.done.contactmgmt.services.SearchStrategy;
 
 public class Main {
 

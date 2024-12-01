@@ -1,13 +1,10 @@
-package com.gatomalvado.todo.trello;
+package com.gatomalvado.done.trello;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-import com.gatomalvado.todo.trello.entities.TaskUser;
-import com.gatomalvado.todo.trello.entities.TrelloBoard;
-import com.gatomalvado.todo.trello.enums.Status;
-import com.gatomalvado.todo.trello.service.BoardService;
+import com.gatomalvado.done.trello.entities.TaskUser;
+import com.gatomalvado.done.trello.service.BoardService;
 
 public class Main {
 

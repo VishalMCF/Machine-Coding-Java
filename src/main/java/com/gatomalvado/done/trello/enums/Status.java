@@ -1,4 +1,4 @@
-package com.gatomalvado.todo.trello.enums;
+package com.gatomalvado.done.trello.enums;
 
 public enum Status {
     PUBLIC,

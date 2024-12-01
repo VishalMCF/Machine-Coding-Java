@@ -1,4 +1,4 @@
-package com.gatomalvado.todo.contactmgmt.entities;
+package com.gatomalvado.done.contactmgmt.entities;
 
 import java.util.List;
 

@@ -1,10 +1,10 @@
-package com.gatomalvado.todo.trello.entities;
+package com.gatomalvado.done.trello.entities;
 
 import java.util.Objects;
 import java.util.Set;
 
-import com.gatomalvado.todo.trello.enums.EntityType;
-import com.gatomalvado.todo.trello.enums.Status;
+import com.gatomalvado.done.trello.enums.EntityType;
+import com.gatomalvado.done.trello.enums.Status;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

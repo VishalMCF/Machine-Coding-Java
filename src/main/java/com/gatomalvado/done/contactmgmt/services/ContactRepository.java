@@ -1,13 +1,12 @@
-package com.gatomalvado.todo.contactmgmt.services;
+package com.gatomalvado.done.contactmgmt.services;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
-import com.gatomalvado.todo.contactmgmt.entities.Contact;
-import com.gatomalvado.todo.contactmgmt.entities.SearchResult;
+import com.gatomalvado.done.contactmgmt.entities.Contact;
+import com.gatomalvado.done.contactmgmt.entities.SearchResult;
 
 public class ContactRepository {
 

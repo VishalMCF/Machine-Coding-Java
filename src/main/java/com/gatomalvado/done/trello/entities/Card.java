@@ -1,9 +1,8 @@
-package com.gatomalvado.todo.trello.entities;
+package com.gatomalvado.done.trello.entities;
 
 import java.util.Objects;
-import java.util.Set;
 
-import com.gatomalvado.todo.trello.enums.EntityType;
+import com.gatomalvado.done.trello.enums.EntityType;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -14,13 +13,15 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class SubGroup extends BaseEntity {
+public class Card extends BaseEntity {
+    // id, name, description, assigned user
     private String id;
-    private String boardId;
     private String name;
-    private Set<Card> cards;
+    private String description;
+    private TaskUser assignedUser;
+    private SubGroup subGroup;
 
-    private EntityType entityType = EntityType.SUBGROUP;
+    private EntityType entityType = EntityType.CARD;
 
     @Override
     public boolean equals(Object o) {
@@ -30,8 +31,8 @@ public class SubGroup extends BaseEntity {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        SubGroup subGroup = (SubGroup) o;
-        return Objects.equals(id, subGroup.id);
+        Card card = (Card) o;
+        return Objects.equals(id, card.id);
     }
 
     @Override
