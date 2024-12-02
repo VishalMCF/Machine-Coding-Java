@@ -1,4 +1,4 @@
-package com.gatomalvado.todo.foodkart.service;
+package com.gatomalvado.done.foodkart.service;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -7,13 +7,13 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
-import com.gatomalvado.todo.foodkart.entities.Customer;
-import com.gatomalvado.todo.foodkart.entities.Menu;
-import com.gatomalvado.todo.foodkart.entities.MenuItem;
-import com.gatomalvado.todo.foodkart.entities.Order;
-import com.gatomalvado.todo.foodkart.entities.OrderItem;
-import com.gatomalvado.todo.foodkart.entities.OrderStatus;
-import com.gatomalvado.todo.foodkart.entities.Restaurant;
+import com.gatomalvado.done.foodkart.entities.Customer;
+import com.gatomalvado.done.foodkart.entities.Menu;
+import com.gatomalvado.done.foodkart.entities.MenuItem;
+import com.gatomalvado.done.foodkart.entities.Order;
+import com.gatomalvado.done.foodkart.entities.OrderItem;
+import com.gatomalvado.done.foodkart.entities.OrderStatus;
+import com.gatomalvado.done.foodkart.entities.Restaurant;
 
 public class RestaurantService {
 
