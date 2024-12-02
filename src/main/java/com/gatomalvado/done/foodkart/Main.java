@@ -1,14 +1,14 @@
-package com.gatomalvado.todo.foodkart;
+package com.gatomalvado.done.foodkart;
 
 import java.util.List;
 
-import com.gatomalvado.todo.foodkart.entities.Customer;
-import com.gatomalvado.todo.foodkart.entities.Menu;
-import com.gatomalvado.todo.foodkart.entities.MenuItem;
-import com.gatomalvado.todo.foodkart.entities.OrderItem;
-import com.gatomalvado.todo.foodkart.entities.Restaurant;
-import com.gatomalvado.todo.foodkart.repo.RestaurantRepository;
-import com.gatomalvado.todo.foodkart.service.RestaurantService;
+import com.gatomalvado.done.foodkart.entities.Customer;
+import com.gatomalvado.done.foodkart.entities.Menu;
+import com.gatomalvado.done.foodkart.entities.MenuItem;
+import com.gatomalvado.done.foodkart.entities.OrderItem;
+import com.gatomalvado.done.foodkart.entities.Restaurant;
+import com.gatomalvado.done.foodkart.repo.RestaurantRepository;
+import com.gatomalvado.done.foodkart.service.RestaurantService;
 
 public class Main {
 

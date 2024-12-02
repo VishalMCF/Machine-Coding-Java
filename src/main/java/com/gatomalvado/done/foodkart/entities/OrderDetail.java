@@ -1,4 +1,4 @@
-package com.gatomalvado.todo.foodkart.entities;
+package com.gatomalvado.done.foodkart.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
